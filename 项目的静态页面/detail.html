@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="./common.css" />
+    <link rel="stylesheet" href="./ico/iconfont.css" />
+    <link rel="stylesheet" href="./libs/swiper-4.1.0.min.css">
+    <script src="./libs/swiper-4.1.0.min.js"></script>
+    <title>电影详细</title>
+  </head>
+  <body>
+    <div id="main">
+      <div id="film_detail">
+        <!-- 电影详情页头部 -->
+        <div class="film_header" id="my_header">
+          <div class="get_back">
+            <img src="./img/p11.png" />
+          </div>
+          <div class="title">日常幻想指南</div>
+        </div>
+        
+        <!-- 电影海报 -->
+        <div class="poster">
+          <div class="poster_background"></div>
+          <div class="poster_img">
+            <img src="./img/p12.jpg" />
+          </div>
+        </div>
+        
+        <!-- 电影信息 -->
+        <div class="film_information">
+          <div class="fiml_title">
+            <div class="film_name">
+              <div class="name">日常幻想指南</div><span class="item">2D</span>
+            </div>
+            <div class="film-grade">
+              <span class="grade">7.7</span><span class="grade_text">分</span>
+            </div>
+          </div>
+          <div class="film_text">喜剧 | 奇幻 | 爱情</div>
+          <div class="film_text"> 2021-09-19上映 </div>
+          <div class="film_text"> 中国大陆 | 分钟 </div>
+          <div class="film_content" title=0>
+            童年的阿震因同学陷害被全校公认为偷窃校长钱包的小偷，长大后，阿震成了一个真正的小偷，或是因果报应使然，一道天雷劈下，阿震拥有了可以和非人类对话的能力，惊恐中的阿震求医询问，谁料主治医师竟是自己的初恋草莓，二人的感情发展似乎有了转机......草莓的出现让阿震得以成长，同时在所有静物的感化之下，阿震终于改邪归正迎来全新的生活。
+          </div>
+          <div class="drop_down">
+            <i class="iconfont icon-xia" id="icon"></i>
+          </div>
+        </div>
+        
+        <!-- 演员表 -->
+        <div class="actor_list">
+          <div class="actor_list_title">演职人员</div>
+          <div class="detail_player swiper-container">
+            <ul class="swiper-wrapper">
+            	<li class="swiper-slide">
+                <div class="actor_img">
+                  <img src="./img/p13.jpg" />
+                </div>
+                <p class="actor_name">梁栋</p>
+                <p class="actor_role">导演</p>
+              </li>
+              
+              <li class="swiper-slide">
+                <div class="actor_img">
+                  <img src="./img/p14.jpg" />
+                </div>
+                <p class="actor_name">梁栋</p>
+                <p class="actor_role">导演</p>
+              </li>
+              
+              <li class="swiper-slide">
+                <div class="actor_img">
+                  <img src="./img/p15.jpg" />
+                </div>
+                <p class="actor_name">梁栋</p>
+                <p class="actor_role">导演</p>
+              </li>
+              
+              <li class="swiper-slide">
+                <div class="actor_img">
+                  <img src="./img/p16.jpg" />
+                </div>
+                <p class="actor_name">梁栋</p>
+                <p class="actor_role">导演</p>
+              </li>
+              
+              <li class="swiper-slide">
+                <div class="actor_img">
+                  <img src="./img/p17.jpg" />
+                </div>
+                <p class="actor_name">梁栋</p>
+                <p class="actor_role">导演</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- 剧照列表 -->
+        <div class="photos_list">
+          <div class="photos_title">
+            <span class="title">剧照</span><span class="num">全部(5)</span>
+          </div>
+     
+          <div class="stage_photos swiper-container">
+            <ul class="swiper-wrapper">
+              <li class="swiper-slide">
+                <div class="stage_img">
+                  <img src="./img/p18.jpg" />
+                </div>
+              </li>
+              
+              <li class="swiper-slide">
+                <div class="stage_img">
+                  <img src="./img/p19.jpg" />
+                </div>
+              </li>
+              
+              <li class="swiper-slide">
+                <div class="stage_img">
+                  <img src="./img/p20.jpg" />
+                </div>
+              </li>
+              
+              <li class="swiper-slide">
+                <div class="stage_img">
+                  <img src="./img/p21.jpg" />
+                </div>
+              </li>
+              
+              <li class="swiper-slide">
+                <div class="stage_img">
+                  <img src="./img/p22.jpg" />
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      
+        <!-- 购票 -->
+        <div class="buy_ticket"> 选座购票 </div>
+      </div> 
+    </div>
+  </body>
+  
+  
+  <script>
+  
+    new Swiper('.detail_player' , {
+      slidesPerView : 'auto',
+      freeMode : true,
+      freeModeSticky: true
+    });
+    
+    new Swiper('.stage_photos' , {
+      slidesPerView : 'auto',
+      freeMode : true,
+      freeModeSticky: true
+    });
+    
+    window.onload = function() {
+      var oDiv = document.getElementById("main");
+      var oHear = document.getElementById("my_header");
+      var oPull = document.getElementsByClassName("drop_down")[0];
+      var oFilm = document.getElementsByClassName("film_content")[0];
+      var icon = document.getElementById("icon")
+
+      // 一行26个字,一行字高18
+      var H = 18 * Math.ceil(oFilm.innerText.length / 26);
+      
+      window.ontouchmove = function(event){
+        if(oDiv.scrollTop > 16) {
+          oHear.className = "film_header show_film_header";
+        }
+        
+        if(oDiv.scrollTop < 16) {
+          oHear.className = "film_header";
+        }
+      }
+      
+      oPull.onclick = function() {
+        if(oFilm.title == 0) {
+          oFilm.style.overflow = "visible";
+          oFilm.style.height = H + "px";
+          oFilm.title = 1;
+          icon.className = "iconfont icon-shang";
+        } else {
+          oFilm.style.overflow = "hidden";
+          oFilm.style.height = "37px";
+          oFilm.title = 0;
+          icon.className = "iconfont icon-xia";
+        }
+      }
+	  
+	  var imgs = document.querySelector(".poster_img img");
+	  console.log(window.getComputedStyle(imgs).height.slice(0,3))
+	  var xxx = document.getElementsByClassName("poster_img")[0];
+	  var zzz = (window.getComputedStyle(imgs).height.slice(0,3) - window.getComputedStyle(xxx).height.slice(0,3)) / 2;
+	  console.log(zzz);
+	  imgs.style.top = -zzz + 'px';
+    }
+    
+  </script>
+</html>

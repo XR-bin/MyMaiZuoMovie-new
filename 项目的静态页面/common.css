@@ -1,0 +1,175 @@
+* { margin: 0; padding: 0; }
+ul, li { list-style: none; }
+img { display: block; }
+html, body { height: 100%; }
+div { box-sizing: border-box; }
+h1, h2, h3 { font-size: 16px; }                                   /*给标题统一字体大小*/
+
+.clear:after{ content: ''; display: block; clear: both; }           /*清除浮动*/
+
+#main { height: 100%; overflow-y:auto; overflow-x: hidden; }    
+
+/*头部标题*/
+#header { width: 100%; height: 40px; line-height: 40px; overflow: hidden; z-index: 100; top: 0; left: 0; display: flex; position: relative; position: sticky; top: 0px; background-color: #fff; }
+#header .header_left { min-width: 15%; display: flex; justify-content: flex-start; align-items: center; margin-left: 15px; float: left; height: 40px; } 
+#header .header_left span { font-size: 13px; max-width: 58px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#header .header_left i { font-size: 10px; }
+#header .header_middle { text-align: center; color: #191a1b; flex: 1; overflow: hidden; text-overflow: ellipsis; text-overflow: ellipsis; white-space: nowrap; float: left; height: 40px; }
+#header .header_middle div { text-align: center; font-size: 18px; }
+#header .header_right { width: 15%; margin-right: 15px; align-items: center; text-align: right; height: 40px; float: left; }
+#header .header_right i { font-size: 18px; }
+
+/*页脚导航栏*/
+#footer{ width:100%; height:50px; background: white; border-top:2px #ebe8e3 solid; position: fixed; left: 0; bottom:0; }
+#footer ul{ display: flex; text-align: center; height:50px; align-items:center; }
+#footer ul li{ flex:1; height:40px; }
+#footer ul li.active{ color: #f03d37; }
+#footer ul i{ font-size: 20px; }
+#footer ul p{ font-size: 12px; line-height: 18px; }
+
+
+
+
+/**************************** 电影页面 ****************************/
+#film-list { min-height: 100%; width: 100%; position: relative; }
+
+/*轮播*/
+#film-list #movie_swiper { height: 200px; width: 100%; background-color: yellow; margin-top: 6px; }
+
+/*热映与上映*/
+#film-list .hot_swtich { margin-top: 6px; height: 45px; width: 100%; line-height: 45px; display: flex; position: sticky; top: 38px; background-color: white; z-index: 100; }
+#film-list .hot_item { width: 50%; text-align: center; }
+#film-list .hot_item span { font-size: 14px; color: #191a1b; }
+#film-list .hot_item span.active { color: #ff5f16; border-bottom: 2px #ff5f16 solid; }
+
+/*电影列表*/
+#film-list .movie_body { width: 100%; height: 100%; overflow: hidden; }
+#film-list .movie_body ul{ width: 100%; height: 100%; margin-left: 15px; }
+#film-list .movie_body ul li { margin: 15px 15px 15px 0; display: flex; justify-content: flex-start; align-items: center; margin-right: 5px; }
+#film-list .movie_body ul li .pic_show { width:66px; height: 92px; float: left; position: relative; }
+#film-list .movie_body ul li .pic_show img { width: 100%; position: absolute; }
+#film-list .movie_body ul li .info_list { float: left; width: calc(100% - 160px); margin: 0 10px; }
+#film-list .movie_body ul li .info_list h2 { font-size: 16px; line-height: 24px; width:150px; overflow: hidden; white-space: nowrap; text-overflow:ellipsis; }
+#film-list .movie_body ul li .info_list p { font-size: 13px; color:#797d82; line-height: 22px; overflow: hidden; white-space: nowrap; text-overflow:ellipsis; }
+#film-list .movie_body ul li .info_list p .grade { font-weight: 700; color: #ffb232; font-size: 14px; }
+#film-list .movie_body ul li .btn_mall { float: right; width:50px; height:25px; line-height: 25px; text-align: center; color: #ff5f16; border: 1px solid #ff5f16;border-radius: 4px; font-size: 13px; cursor: pointer; }
+#film-list .movie_body ul:after{ content: ''; display: block; height: 50px; clear: both; }
+
+
+
+
+
+
+
+/**************************** 影院页面 ****************************/
+#cinema-list { min-height: 100%; width: 100%; position: relative; }
+
+/*筛选栏*/
+#cinema-list .cinema_menu { position: fixed; height: 50px; width: 100%; top: 40px; right: 0; text-align: center; background-color: #fff; z-index: 90; }
+#cinema-list .cinema_menu .cinema_menu_tag { position: relative; }
+#cinema-list .cinema_menu .cinema_menu_tag .tag_switch { float: left; width: 33%; line-height: 49px; font-size: 14px; color: #191a1b; letter-spacing: -.2px; text-align: center; }
+
+
+/*为了产生隔离距离，没有其他作用*/
+#cinema-list .cinema_layer { padding-top: 50px; }
+
+/*电影院列表*/
+#cinema-list .cinema_body { padding-bottom: 49px; z-index: 100; }
+#cinema-list .cinema_body ul li { position: relative; background-color: #fff; padding: 15px; display: flex; align-items: center; }
+#cinema-list .cinema_body ul li .cinema_left { width: calc(100% - 65px); text-align: left; padding-right: 15px; float: left; }
+#cinema-list .cinema_body ul li .cinema_left .cinema_name { color: #191a1b; font-size: 16px; overflow: hidden; white-space: nowrap; text-overflow:ellipsis; display: block; max-width: 90% }
+#cinema-list .cinema_body ul li .cinema_left .cinema_addr { color: #797d82; font-size: 12px; margin-top: 5px; overflow: hidden; white-space: nowrap; text-overflow:ellipsis; display: block; max-width: 90% }
+#cinema-list .cinema_body ul li .cinema_right { width: 70px; text-align: center; float: right; margin-right: -5px; }
+#cinema-list .cinema_body ul li .cinema_right div .cinema-lowPrice{ font-size: 15px; color: #ff5f16; height: 0!important; display: inline-table!important; float: none!important; }
+#cinema-list .cinema_body ul li .cinema_right div .cinema-lowPrice i { font-size: 11px; font-style: normal; }
+#cinema-list .cinema_body ul li .cinema_right div .upon { color: #ff5f16; font-size: 10px; }
+#cinema-list .cinema_body ul li .cinema_right .cinema-gpsAddress { display: block; font-size: 11px; color: #797d82; margin-top: 5px; }
+
+
+
+
+/**************************** 登录页面 ****************************/
+#login { position: relative; top: 0; right: 0; left: 0; font-size: 15px; background: #f4f4f4; margin-bottom: 59px; }
+
+/*登录栏*/
+#login .login_avatar { text-align: center; margin-top: -44px; height: 200px; padding-left: 22px; padding-top: 64px; background: url(./img/p3.png); background-size: cover; align-items: center; color: #fff; display: flex;}
+#login .login_avatar .avatar_icon { width: 63px; height: 63px; border-radius: 50%; margin-right: 20px; border: 2px solid #fff; }
+#login .login_avatar .register { font-size: 16px; }
+
+/* 订单栏 */
+#login .order { width: 100%; margin: 0 auto; display: flex; text-align: center; font-size: 13px; height: 79px; background: #fff; margin-bottom: 10px; align-items: center; }
+#login .order .my_order { position: relative; flex: 1; } 
+#login .order .my_order img { width: 26px; height: 26px; display: inline-block; }
+#login .order .my_order div { color: #797d82;; }
+
+/*功能栏*/
+#login .func_card { position: relative; background: #fff; padding: 0 15px; height: 49px; display: flex; align-items: center; }
+#login .func_card span { margin-left: 15px; color: #191a1b; flex: 1; display: block; }
+#login .func_card img { width: 20px; height: 20px; display: block; }
+
+
+
+
+
+/**************************** 电影详情页面 ****************************/
+/*电影详情页头部*/
+#film_detail { width: 100%; min-height: 100%; overflow-y: scroll; }
+#film_detail .film_header { position: fixed; background-color: hsla(0,0%,100%,0); color: transparent; transition: all .6s ease; width: 100%; height: 44px; z-index: 10; }
+#film_detail .show_film_header { transition: all .6s ease; background-color: #fff; color: #191a1b; }
+#film_detail .get_back { height: 30px; position: absolute; top: 5px; left: 5px; border-radius: 50%; }
+#film_detail .get_back img { width: 30px; display: inline-block; }
+#film_detail .title { font-size: 17px; line-height: 44px; text-align: center; width: 100%; }
+
+/*电影海报*/
+#film_detail .poster { width: 100%; position: relative; }
+#film_detail .poster .poster_background { width: 100%; background: rgb(249, 249, 249); height: 56vw;display: flex; justify-content: center; align-items: center; }
+#film_detail .poster .poster_img { width: 100%; opacity: 1; position: absolute; overflow: hidden; top: 0; height: 56vw; align-items: center; justify-content: center;}
+#film_detail .poster .poster_img img{ width: 100%; position: absolute; top: -76.5%; left: 0; }
+
+/*电影信息*/
+#film_detail .film_information { padding: 12px 15px 15px 15px; }
+#film_detail .film_information .fiml_title { justify-content: flex-start; align-items: center; display: flex; }
+#film_detail .film_information .fiml_title .film_name { width: 256px; color: #2c3e50; }
+#film_detail .film_information .fiml_title .film_name .name { color: #191a1b; font-size: 18px; height: 27px; line-height: 27px; margin-right: 7px; display: inline-block; vertical-align: middle; }
+#film_detail .film_information .fiml_title .film_name .item { font-size: 9px; color: #fff; background-color: #d2d6dc; height: 14px; line-height: 14px; padding: 0 2px; border-radius: 2px; display: inline-block; vertical-align: middle; }
+#film_detail .film_information .fiml_title .film-grade { width: calc(100% - 250px); text-align: right; color: #ffb232; }
+#film_detail .film_information .fiml_title .film-grade .grade { font-size: 18px; font-style: italic; }
+#film_detail .film_information .fiml_title .film-grade .grade_text { font-size: 10px; }
+#film_detail .film_information .film_text { font-size: 13px; color: #797d82; margin-top: 4px; }
+#film_detail .film_information .film_content { height: 36px; overflow: hidden; margin-top: 12px; font-size: 13px; color: #797d82; transition: all .3s ease; }
+#film_detail .film_information .drop_down { text-align: center; font-size: 16px; width: 100%; font-weight: 700; }
+
+/*演员列表*/
+#film_detail .actor_list { margin-top: 10px; }
+#film_detail .actor_list .actor_list_title { width: 100%; padding: 15px; font-size: 16px; text-align: left; color: #191a1b; }
+#film_detail .actor_list .actor_list_title .detail_player { height: 140px; background: rgb(255, 255, 255); }
+#film_detail .actor_list .detail_player{ margin: 0px 16px 0px 16px; }
+#film_detail .actor_list .detail_player .swiper-slide { width:85px; margin-right: 12px; text-align: center; font-size: 14px;}
+#film_detail .actor_list .detail_player .swiper-slide .actor_img { width: 85px; height: 85px; overflow: hidden; position: relative; }
+#film_detail .actor_list .detail_player .swiper-slide img{ width:100%; margin-bottom: 5px; position: absolute; top: -16px;}
+#film_detail .actor_list .detail_player .swiper-slide .actor_name { padding-top: 10px; font-size: 12px; width: 85px; height: 18px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap }
+#film_detail .actor_list .detail_player .swiper-slide .actor_role { text-align: center; font-size: 10px; color: #797d82; }
+
+/*剧照列表*/
+#film_detail .photos_list { margin-top: 10px; margin-bottom: 60px; background-color: #fff; }
+#film_detail .photos_list .photos_title { height: 62px; width: 100%; padding: 15px; }
+#film_detail .photos_list .photos_title .title { font-size: 16px; text-align: left; color: #191a1b; height: 22.5px; line-height: 22px; }
+#film_detail .photos_list .photos_title .num { font-size: 13px; color: #797d82; float: right; display: inline-block; height: 22.5px; line-height: 22px; }
+#film_detail .photos_list .stage_photos { height: 115px; margin: 0px 8px 0px 8px; }
+#film_detail .photos_list .stage_photos .swiper-slide { width:150px; height: 100px; margin-right: 12px; }
+#film_detail .photos_list .stage_photos .swiper-slide .stage_img { width: 100%; height: 100%;  overflow: hidden; position: relative; }
+#film_detail .photos_list .stage_photos .swiper-slide img{ width:100%; margin-bottom: 5px; }
+
+/*购票*/
+#film_detail .buy_ticket { position: fixed; bottom: 0; left: 0; height: 49px; width: 100%;; text-align: center; background-color: #ff5f16; color: #fff; font-size: 16px; line-height: 49px; z-index: 9;}
+
+
+
+
+
+
+
+/**************************** 城市选择页面 ****************************/
+#city_header { position: fixed; top: 0; left: 0; width: 100%; height: 44px; overflow: hidden; margin: 0; padding: 0; z-index: 300; background-color: #fff; }
+#city_header .cancel { width: 14%; justify-content: flex-start; display: flex; align-items: center; float: left; height: 44px; }
+#city_header .city_title { width: 72%; text-align: center; font-size: 17px; display: flex; justify-content: center; align-items: center; color: #191a1b;float: left; height: 44px; }

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@2.12/lib/index.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vant@2.12/lib/vant.min.js"></script>
+    <link rel="stylesheet" href="./common.css" />
+    <link rel="stylesheet" href="./ico/iconfont.css" />
+    <title>搜索</title>
+  </head>
+  <body>
+    <div id="box">
+      <form action="/">
+        <van-search
+          v-model="value"
+          show-action
+          placeholder="请输入搜索关键词"
+          @search="onSearch"
+          @cancel="onCancel"
+        />
+      </form>
+    </div>
+    
+    <!-- 导航栏 -->
+    <footer id="footer">
+    	<ul>
+    		<li>
+    			<i class="iconfont icon-dianyingyuan"></i>
+    			<p>电影</p>
+    		</li>
+    		<li class="active">
+    			<i class="iconfont icon-yingyuan"></i>
+    			<p>影院</p>
+    		</li>
+    		<li>
+    			<i class="iconfont icon-wode"></i>
+    			<p>我的</p>
+    		</li>
+    	</ul>
+    </footer>
+    
+    
+    <script type="text/javascript">
+      new Vue({
+        el: "#box",
+        
+        //在 data 对象中定义状态
+        data:{
+        	value:"",
+        },  //这里myname称为变量或者有种新叫法(状态),一般叫做状态
+        
+        // 在 methods 对象中定义方法
+        methods: {
+        	onSearch(val) {
+            vant.Toast(val);
+          },
+          onCancel() {
+            vant.Toast('取消');
+          },
+        }
+      })
+    </script>
+  </body>
+</html>

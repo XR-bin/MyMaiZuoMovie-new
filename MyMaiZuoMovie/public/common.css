@@ -1,0 +1,10 @@
+* { margin: 0; padding: 0; }
+ul, li { list-style: none; }
+img { display: block; }
+html, body { height: 100%; }
+div { box-sizing: border-box; }
+h1, h2, h3 { font-size: 16px; }                                   /*给标题统一字体大小*/
+
+.clear:after{ content: ''; display: block; clear: both; }           /*清除浮动*/
+
+#main { height: 100%; overflow-y:auto; overflow-x: hidden; }    
